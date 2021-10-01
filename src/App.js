@@ -1,16 +1,15 @@
-import Header from './components/Header'
-import Home from './components/Home'
-import SideNav from './components/SideNav'
-import Footer from './components/Footer'
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+
+import Router from "./routes";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Home />
-      <SideNav />
-      <Footer />
-    </div>
+    <>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </>
   );
 }
 
