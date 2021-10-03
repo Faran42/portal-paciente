@@ -1,10 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import Body from "../components/Body";
 import SideNav from "../components/SideNav";
 import Footer from "../components/Footer";
 
+import api from "axios";
+
 const Dashboard = () => {
+  const [order, setOrder] = useState({
+    endereco: "",
+    medicamento: "",
+    medico: "",
+  });
+
+  function teste(evt) {
+    return console.log("saaa");
+  }
+
+  function handleInputs(type, data) {
+    switch (type) {
+      case "ende":
+        setOrder({ endereco: data });
+        console.log(order.endereco);
+        break;
+
+      case "med":
+        setOrder({ medicamento: data });
+        break;
+
+      case "dr":
+        setOrder({ medico: data });
+        break;
+
+      case "qt":
+        setOrder({ quantidade: data });
+        break;
+
+      case "date":
+        setOrder({ reqDate: data });
+        break;
+
+      case "fone":
+        setOrder({ medicamento: data });
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  function handleClick() {
+    api
+      .post("requisicao", {
+        medicamento: order.medicamento,
+        medico: order.medico,
+        quantidade: order.quantidade,
+        id_login: sessionStorage.getItem("googleId"),
+        create_date: order.reqDate,
+        telefone: order.telefone,
+      })
+      .then((response) => {
+        alert("Cadastro realizado com sucesso!");
+        console.log(response);
+        //  history.push("/dashboard");
+      });
+  }
+
   return (
     <div>
       <Header />
@@ -129,6 +190,12 @@ const Dashboard = () => {
                                         type="text"
                                         className="form-control"
                                         placeholder="Alameda dos Anjos..."
+                                        onChange={(data) =>
+                                          handleInputs(
+                                            "ende",
+                                            data.target.value
+                                          )
+                                        }
                                       />
                                     </div>
                                   </div>
@@ -143,7 +210,6 @@ const Dashboard = () => {
                                     </div>
                                   </div>
                                 </div>
-
                                 <div className="row">
                                   <div className="col-sm-6">
                                     {/* text input */}
@@ -167,7 +233,6 @@ const Dashboard = () => {
                                     </div>
                                   </div>
                                 </div>
-
                                 <div className="row">
                                   <div className="col-sm-6">
                                     {/* text input */}
@@ -211,6 +276,7 @@ const Dashboard = () => {
                                     <button
                                       type="submit"
                                       className="btn btn-success"
+                                      onClick={() => teste()}
                                     >
                                       Fazer pedido
                                     </button>
