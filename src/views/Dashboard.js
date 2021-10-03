@@ -169,130 +169,124 @@ const Dashboard = () => {
                       id="collapseExample"
                     >
                       <div className="">
-                        <div className="card card-body ">
-                          {/* /.row */}
-                          {/* form */}
-                          <div className="card card-success">
-                            <div className="card-header">
-                              <h3 className="card-title">
-                                Pedido de compra de medicamento
-                              </h3>
-                            </div>
-                            {/* /.card-header */}
-                            <div className="card-body">
-                              <form>
-                                <div className="row">
-                                  <div className="col-sm-6">
-                                    {/* text input */}
-                                    <div className="form-group">
-                                      <label>Endereço para entrega</label>
-                                      <input
-                                        type="text"
-                                        className="form-control"
-                                        placeholder="Alameda dos Anjos..."
-                                        onChange={(data) =>
-                                          handleInputs(
-                                            "ende",
-                                            data.target.value
-                                          )
-                                        }
-                                      />
-                                    </div>
-                                  </div>
-                                  <div className="col-sm-6">
-                                    <div className="form-group">
-                                      <label>Nome do Médico</label>
-                                      <input
-                                        type="text"
-                                        className="form-control"
-                                        placeholder="Hipócrates"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="row">
-                                  <div className="col-sm-6">
-                                    {/* text input */}
-                                    <div className="form-group">
-                                      <label>Nome do Medicamento</label>
-                                      <input
-                                        type="text"
-                                        className="form-control"
-                                        placeholder="HP Potion"
-                                      />
-                                    </div>
-                                  </div>
-                                  <div className="col-sm-6">
-                                    <div className="form-group">
-                                      <label>Quantidade</label>
-                                      <input
-                                        type="number"
-                                        className="form-control"
-                                        placeholder="42"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="row">
-                                  <div className="col-sm-6">
-                                    {/* text input */}
-                                    <div className="form-group">
-                                      <label>Data da receita médica</label>
-                                      <input
-                                        type="date"
-                                        className="form-control"
-                                        placeholder="11/11/2011"
-                                      />
-                                    </div>
-                                  </div>
-                                  <div className="col-sm-6">
-                                    <div className="form-group">
-                                      <label>Telefone</label>
-                                      <input
-                                        type="number"
-                                        className="form-control"
-                                        placeholder="(99) 9 9999-9999"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="row">
-                                  <div className="col-sm-6">
-                                    <div className="form-check">
-                                      <input
-                                        type="checkbox"
-                                        className="form-check-input"
-                                        id="exampleCheck1"
-                                      />
-                                      <label
-                                        className="form-check-label"
-                                        htmlFor="exampleCheck1"
-                                      >
-                                        Medicamento genérico?
-                                      </label>
-                                    </div>
-                                  </div>
-                                  <div className="col-sm-6">
-                                    <button
-                                      type="submit"
-                                      className="btn btn-success"
-                                      onClick={() => teste()}
-                                    >
-                                      Fazer pedido
-                                    </button>
-                                  </div>
-                                </div>
-                              </form>
-                            </div>
-                            {/* /.card-body */}
+                        {/* /.row */}
+                        {/* form */}
+                        <div className="card card-success">
+                          <div className="card-header">
+                            <h3 className="card-title">
+                              Pedido de compra de medicamento
+                            </h3>
                           </div>
+                          {/* /.card-header */}
+                          <div className="card-body">
+                            <form>
+                              <div className="row">
+                                <div className="col-sm-6">
+                                  {/* text input */}
+                                  <div className="form-group">
+                                    <label>Endereço para entrega</label>
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      placeholder="Alameda dos Anjos..."
+                                      onChange={(data) =>
+                                        handleInputs("ende", data.target.value)
+                                      }
+                                    />
+                                  </div>
+                                </div>
+                                <div className="col-sm-6">
+                                  <div className="form-group">
+                                    <label>Nome do Médico</label>
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      placeholder="Hipócrates"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="row">
+                                <div className="col-sm-6">
+                                  {/* text input */}
+                                  <div className="form-group">
+                                    <label>Nome do Medicamento</label>
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      placeholder="HP Potion"
+                                    />
+                                  </div>
+                                </div>
+                                <div className="col-sm-6">
+                                  <div className="form-group">
+                                    <label>Quantidade</label>
+                                    <input
+                                      type="number"
+                                      className="form-control"
+                                      placeholder="42"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="row">
+                                <div className="col-sm-6">
+                                  {/* text input */}
+                                  <div className="form-group">
+                                    <label>Data da receita médica</label>
+                                    <input
+                                      type="date"
+                                      className="form-control"
+                                      placeholder="11/11/2011"
+                                    />
+                                  </div>
+                                </div>
+                                <div className="col-sm-6">
+                                  <div className="form-group">
+                                    <label>Telefone</label>
+                                    <input
+                                      type="number"
+                                      className="form-control"
+                                      placeholder="(99) 9 9999-9999"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="row">
+                                <div className="col-sm-6">
+                                  <div className="form-check">
+                                    <input
+                                      type="checkbox"
+                                      className="form-check-input"
+                                      id="exampleCheck1"
+                                    />
+                                    <label
+                                      className="form-check-label"
+                                      htmlFor="exampleCheck1"
+                                    >
+                                      Medicamento genérico?
+                                    </label>
+                                  </div>
+                                </div>
+                                <div className="col-sm-6">
+                                  <button
+                                    type="submit"
+                                    className="btn btn-success"
+                                    onClick={() => teste()}
+                                  >
+                                    Fazer pedido
+                                  </button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                          {/* /.card-body */}
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
               {/* /.row (main row) */}
             </div>
             {/* /.container-fluid */}
