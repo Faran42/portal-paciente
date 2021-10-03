@@ -7,7 +7,7 @@ export function Login() {
   return (
     <Container>
       <Card>
-        <Title>Portal Farmácia</Title>
+        <Title>Portal Paciente</Title>
         <LoginComponent />
       </Card>
     </Container>

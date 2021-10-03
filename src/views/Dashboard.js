@@ -2,46 +2,55 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import Body from "../components/Body";
 import SideNav from "../components/SideNav";
-import Footer from "../components/Footer";
 
-import api from "axios";
+import api from "../config/api";
 
 const Dashboard = () => {
   const [order, setOrder] = useState({
-    endereco: "",
+    endereco: "Rua...",
     medicamento: "",
     medico: "",
+    quantidade: 0,
+    reqDate: "21-12-1979",
+    telefone: 0,
+    generico: false,
   });
-
-  function teste(evt) {
-    return console.log("saaa");
-  }
 
   function handleInputs(type, data) {
     switch (type) {
       case "ende":
-        setOrder({ endereco: data });
+        setOrder({ ...order, endereco: data });
         console.log(order.endereco);
         break;
 
       case "med":
-        setOrder({ medicamento: data });
+        setOrder({ ...order, medicamento: data });
+        console.log(order.medicamento);
         break;
 
       case "dr":
-        setOrder({ medico: data });
+        setOrder({ ...order, medico: data });
+        console.log(order.medico);
         break;
 
       case "qt":
-        setOrder({ quantidade: data });
+        setOrder({ ...order, quantidade: data });
+        console.log(order.quantidade);
         break;
 
       case "date":
-        setOrder({ reqDate: data });
+        setOrder({ ...order, reqDate: data });
+        console.log(order.reqDate);
         break;
 
       case "fone":
-        setOrder({ medicamento: data });
+        setOrder({ ...order, telefone: data });
+        console.log(order.telefone);
+        break;
+
+      case "gen":
+        setOrder({ ...order, generico: data });
+        console.log(order.generico);
         break;
 
       default:
@@ -49,21 +58,33 @@ const Dashboard = () => {
     }
   }
 
-  function handleClick() {
+  function handleClick(e) {
+    console.log(order);
     api
       .post("requisicao", {
         medicamento: order.medicamento,
         medico: order.medico,
         quantidade: order.quantidade,
         id_login: sessionStorage.getItem("googleId"),
+        // userName: sessionStorage.getItem('name'),
         create_date: order.reqDate,
-        telefone: order.telefone,
+        // telefone: order.telefone,
       })
       .then((response) => {
-        alert("Cadastro realizado com sucesso!");
+        return (
+          <button
+            type="button"
+            className="btn btn-success toastsDefaultSuccess"
+          >
+            Cadastro realizado com sucesso!
+          </button>
+        );
+        // alert("Cadastro realizado com sucesso!");
         console.log(response);
         //  history.push("/dashboard");
       });
+
+    e.preventDefault();
   }
 
   return (
@@ -74,6 +95,7 @@ const Dashboard = () => {
         bodyContent={
           <section className="content">
             <div className="container-fluid">
+              
               {/* Small boxes (Stat box) */}
 
               <div className="row">
@@ -202,6 +224,9 @@ const Dashboard = () => {
                                       type="text"
                                       className="form-control"
                                       placeholder="Hipócrates"
+                                      onChange={(data) =>
+                                        handleInputs("dr", data.target.value)
+                                      }
                                     />
                                   </div>
                                 </div>
@@ -215,6 +240,9 @@ const Dashboard = () => {
                                       type="text"
                                       className="form-control"
                                       placeholder="HP Potion"
+                                      onChange={(data) =>
+                                        handleInputs("med", data.target.value)
+                                      }
                                     />
                                   </div>
                                 </div>
@@ -225,6 +253,9 @@ const Dashboard = () => {
                                       type="number"
                                       className="form-control"
                                       placeholder="42"
+                                      onChange={(data) =>
+                                        handleInputs("qt", data.target.value)
+                                      }
                                     />
                                   </div>
                                 </div>
@@ -238,6 +269,9 @@ const Dashboard = () => {
                                       type="date"
                                       className="form-control"
                                       placeholder="11/11/2011"
+                                      onChange={(data) =>
+                                        handleInputs("date", data.target.value)
+                                      }
                                     />
                                   </div>
                                 </div>
@@ -245,9 +279,12 @@ const Dashboard = () => {
                                   <div className="form-group">
                                     <label>Telefone</label>
                                     <input
-                                      type="number"
+                                      type="phone"
                                       className="form-control"
                                       placeholder="(99) 9 9999-9999"
+                                      onChange={(data) =>
+                                        handleInputs("fone", data.target.value)
+                                      }
                                     />
                                   </div>
                                 </div>
@@ -259,6 +296,9 @@ const Dashboard = () => {
                                       type="checkbox"
                                       className="form-check-input"
                                       id="exampleCheck1"
+                                      onChange={(data) =>
+                                        handleInputs("gen", data.target.checked)
+                                      }
                                     />
                                     <label
                                       className="form-check-label"
@@ -272,7 +312,7 @@ const Dashboard = () => {
                                   <button
                                     type="submit"
                                     className="btn btn-success"
-                                    onClick={() => teste()}
+                                    onClick={(e) => handleClick(e)}
                                   >
                                     Fazer pedido
                                   </button>
