@@ -67,7 +67,7 @@ const Dashboard = () => {
         quantidade: order.quantidade,
         id_login: sessionStorage.getItem("googleId"),
         // userName: sessionStorage.getItem('name'),
-        create_date: order.reqDate,
+        create_date: order.reqDate.slice(0, 10)
         // telefone: order.telefone,
       })
       .then((response) => {

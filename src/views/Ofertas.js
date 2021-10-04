@@ -48,7 +48,7 @@ const Ofertas = () => {
     <div>
       <Header />
       <Body
-        title="Meus Pedidos"
+        title="Lista de ofertas"
         bodyContent={
           <div className="row">
             <div className="col-12">

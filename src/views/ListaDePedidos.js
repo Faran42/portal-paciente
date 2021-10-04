@@ -62,10 +62,10 @@ const ListaDePedidos = () => {
                     <thead>
                       <tr>
                         <th>ID</th>
-                        <th>User</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th>Reason</th>
+                        <th>Remédio</th>
+                        <th>Médico</th>
+                        <th>quantidade</th>
+                        <th>Data</th>
                       </tr>
                     </thead>
                     <tbody>
