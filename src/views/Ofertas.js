@@ -55,9 +55,9 @@ const Ofertas = () => {
               <div className="card d-flex align-items-center justify-content-center">
                 {/* /.card-header */}
 
-                {apiResponse.valor !== undefined ? (
+                {/* {apiResponse[0].valor !== undefined ? (
                   <h3>Sem novas ofertas.</h3>
-                ) : (
+                ) : ( */}
                   <div
                     className="card-body table-responsive p-0"
                     style={{ height: 350 }}
@@ -87,7 +87,7 @@ const Ofertas = () => {
                       </tbody>
                     </table>
                   </div>
-                )}
+                
                 {/* /.card-body */}
               </div>
               {/* /.card */}
