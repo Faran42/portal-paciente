@@ -1,7 +1,9 @@
 import React from "react";
+import { useHistory,Link} from  'react-router-dom'
 
 const SideNav = () => {
   const username = sessionStorage.getItem("givenName");
+  const history = useHistory();
   const avatarUrl = sessionStorage.getItem("imageUrl");
   return (
     <div>
@@ -47,31 +49,31 @@ const SideNav = () => {
               {/* Add icons to the links using the .nav-icon class
          with font-awesome or any other icon font library */}
               <li class="nav-item">
-                <a href="/dashboard" class="nav-link">
+                <Link to="/dashboard" class="nav-link">
                   <i class="nav-icon fas fa-home"></i>
                   <p>
                     Início
                     {/* <span class="badge badge-info right">2</span> */}
                   </p>
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a href="/meuspedidos" class="nav-link">
+                <Link to="/meuspedidos" class="nav-link">
                   <i class="nav-icon fas fa-capsules"></i>
                   <p>
                     Seus Pedidos
                     {/* <span class="badge badge-info right">2</span> */}
                   </p>
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a href="/ofertas" class="nav-link">
+                <Link to="/ofertas" class="nav-link">
                   <i class="nav-icon far fa-calendar-alt"></i>
                   <p>
                     Ofertas
                     {/* <span class="badge badge-info right">2</span> */}
                   </p>
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
