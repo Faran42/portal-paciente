@@ -55,7 +55,7 @@ const Ofertas = () => {
               <div className="card d-flex align-items-center justify-content-center">
                 {/* /.card-header */}
 
-                {apiResponse.valor === undefined ? (
+                {apiResponse.valor !== undefined ? (
                   <h3>Sem novas ofertas.</h3>
                 ) : (
                   <div
