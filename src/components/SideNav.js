@@ -47,7 +47,7 @@ const SideNav = () => {
               {/* Add icons to the links using the .nav-icon class
          with font-awesome or any other icon font library */}
               <li class="nav-item">
-                <a href="../dashboard" class="nav-link">
+                <a href="/dashboard" class="nav-link">
                   <i class="nav-icon fas fa-home"></i>
                   <p>
                     Início
@@ -56,7 +56,7 @@ const SideNav = () => {
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../meuspedidos" class="nav-link">
+                <a href="/meuspedidos" class="nav-link">
                   <i class="nav-icon fas fa-capsules"></i>
                   <p>
                     Seus Pedidos
@@ -65,7 +65,7 @@ const SideNav = () => {
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../ofertas" class="nav-link">
+                <a href="/ofertas" class="nav-link">
                   <i class="nav-icon far fa-calendar-alt"></i>
                   <p>
                     Ofertas
