@@ -52,37 +52,42 @@ const Ofertas = () => {
         bodyContent={
           <div className="row">
             <div className="col-12">
-              <div className="card">
+              <div className="card d-flex align-items-center justify-content-center">
                 {/* /.card-header */}
-                <div
-                  className="card-body table-responsive p-0"
-                  style={{ height: 350 }}
-                >
-                  <table className="table table-head-fixed table-hover text-nowrap">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Medicamento</th>
-                        <th>valor</th>
-                        <th>telefone</th>
-                        <th>data</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {apiResponse.map((item, index) => {
-                        return (
-                          <tr>
-                            <th scope="row">{index + 1}</th>
-                            <td>{item.medicamento}</td>
-                            <td>{`R$ ${item.valor},00`}</td>
-                            <td>{item.telefone}</td>
-                            <td>{item.data_historico}</td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
-                </div>
+
+                {apiResponse.value === undefined ? (
+                  <h3>Sem novas ofertas.</h3>
+                ) : (
+                  <div
+                    className="card-body table-responsive p-0"
+                    style={{ height: 350 }}
+                  >
+                    <table className="table table-head-fixed table-hover text-nowrap">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Medicamento</th>
+                          <th>valor</th>
+                          <th>telefone</th>
+                          <th>data</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {apiResponse.map((item, index) => {
+                          return (
+                            <tr>
+                              <th scope="row">{index + 1}</th>
+                              <td>{item.medicamento}</td>
+                              <td>{`R$ ${item.valor},00`}</td>
+                              <td>{item.telefone}</td>
+                              <td>{item.data_historico}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
                 {/* /.card-body */}
               </div>
               {/* /.card */}

@@ -1,7 +1,6 @@
 import React from "react";
 
 const SideNav = () => {
-
   const username = sessionStorage.getItem("givenName");
   const avatarUrl = sessionStorage.getItem("imageUrl");
   return (
@@ -52,7 +51,7 @@ const SideNav = () => {
                   <i class="nav-icon fas fa-home"></i>
                   <p>
                     Início
-                    <span class="badge badge-info right">2</span>
+                    {/* <span class="badge badge-info right">2</span> */}
                   </p>
                 </a>
               </li>
@@ -61,7 +60,7 @@ const SideNav = () => {
                   <i class="nav-icon fas fa-capsules"></i>
                   <p>
                     Seus Pedidos
-                    <span class="badge badge-info right">2</span>
+                    {/* <span class="badge badge-info right">2</span> */}
                   </p>
                 </a>
               </li>
@@ -70,16 +69,7 @@ const SideNav = () => {
                   <i class="nav-icon far fa-calendar-alt"></i>
                   <p>
                     Ofertas
-                    <span class="badge badge-info right">2</span>
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../calendar.html" class="nav-link">
-                  <i class="nav-icon far fa-calendar-alt"></i>
-                  <p>
-                    Calendar
-                    <span class="badge badge-info right">2</span>
+                    {/* <span class="badge badge-info right">2</span> */}
                   </p>
                 </a>
               </li>
